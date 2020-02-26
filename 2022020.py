@@ -103,25 +103,25 @@ with open(filepath) as f:
 
      
 
-#    S = f.readline().split() 
+    S = f.readline().split() 
 
-    for i in range(N): 
+for i in range(N): 
 
-        S[i] = int(S[i]) 
+    S[i] = int(S[i]) 
 
 #        print('S[{}]: {}'.format(i, S[i])) 
 
  
-    p = 0.8
+p = 0.8
 #    imprvdGreedy(S, M, N, p)
-    idx = list(range(N))
-    idx1 = sample(range(N), k = int(N*p))
-    Nsol = 0
-    Sol = []
-    Msol = 0
-    T = 1000
-    while T > 0:
-        Soltemp = imprvdGreedy2(S, M, N, idx, idx1)
+idx = list(range(N))
+idx1 = sample(range(N), k = int(N*p))
+Nsol = 0
+Sol = []
+Msol = 0
+T = 1000
+while T > 0:
+    Soltemp = imprvdGreedy2(S, M, N, idx, idx1)
 #        [Ntemp, Soltemp, Mtemp] = imprvdGreedy2(S, M, N, idx, idx1)
         
  #       if Mtemp > Msol & Mtemp != M:
@@ -130,11 +130,11 @@ with open(filepath) as f:
 #        elif Mtemp == Msol:
 #            break
 #        T -= 1            
-        if sum(Soltemp) > Msol & sum(Soltemp) != M:
-           Msol = sum(Soltemp)
-           Sol = Soltemp            
-        elif Mtemp == Msol:
-           Nsol = len(Soltemp)
-           Sol = Soltemp  
-           break
-        T -= 1
+    if sum(Soltemp) > Msol & sum(Soltemp) != M:
+       Msol = sum(Soltemp)
+       Sol = Soltemp            
+    elif Mtemp == Msol:
+       Nsol = len(Soltemp)
+       Sol = Soltemp  
+       break
+    T -= 1
